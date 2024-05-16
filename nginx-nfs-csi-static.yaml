@@ -1,0 +1,34 @@
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nginx-nfs
+spec:
+  containers:
+    - image: nginx:latest
+      name: nginx-nfs-csi
+      command:
+        - "/bin/bash"
+        - "-c"
+        - set -euo pipefail; while true; do echo $(date) >> /mnt/nfs/outfile; sleep 1; done
+      volumeMounts:
+        - name: goodtimes
+          mountPath: "/mnt/nfs"
+          readOnly: false
+  volumes:
+    - name: goodtimes
+      persistentVolumeClaim:
+        claimName: nginx-nfs-static-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nginx-nfs-static-pvc
+spec:
+  storageClassName: nfs-csi-gold
+  accessModes:
+    - ReadWriteMany #  Make sure to match the pv
+  resources:
+    requests:
+      storage: 50Mi
+  volumeName: goodtimes

@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: goodtimes
+spec:
+  capacity:
+   storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+   - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs-csi-gold
+  mountOptions:
+   - hard
+   - nfsvers=4.2
+   - port=20491
+  nfs:
+   path: /goodtimes
+   server: 192.168.100.5
