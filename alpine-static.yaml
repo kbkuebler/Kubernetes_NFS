@@ -1,0 +1,30 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: alpine-nfs
+  namespace: hammerspace
+spec:
+  containers:
+    - image: alpine:latest
+      name: alpine-nfs-csi
+      volumeMounts:
+        - name: goodtimes
+          mountPath: "/mnt/nfs"
+          readOnly: false
+  volumes:
+    - name: goodtimes
+      persistentVolumeClaim:
+        claimName: nginx-nfs-static-pvc
+---
+#apiVersion: v1
+#kind: PersistentVolumeClaim
+#metadata:
+#  name: nginx-nfs-static-pvc
+#spec:
+#  storageClassName: hs-static
+#  accessModes:
+#    - ReadWriteMany #  Make sure to match the pv
+#  resources:
+#    requests:
+#      storage: 50Mi
+#  volumeName: goodtimes

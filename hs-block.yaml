@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: hammer-block
+  namespace: default
+spec:
+  volumeMode: Block
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: hs-storage

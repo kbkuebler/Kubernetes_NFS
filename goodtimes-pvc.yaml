@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nginx-nfs-static-pvc
+spec:
+  storageClassName: nfs-csi-gold
+  accessModes:
+    - ReadWriteMany #  Make sure to match the pv
+  resources:
+    requests:
+      storage: 50Mi
+  volumeName: goodtimes

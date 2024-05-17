@@ -10,6 +10,9 @@ spec:
    - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   storageClassName: nfs-csi-gold
+  claimRef:
+    name: hs-pvc
+    namespace: hammerspace
   mountOptions:
    - hard
    - nfsvers=4.2
