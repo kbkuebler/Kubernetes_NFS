@@ -11,7 +11,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: nfs-csi-gold
   claimRef:
-    name: hs-pvc
+    name: goodtimes-pvc
     namespace: hammerspace
   mountOptions:
    - hard

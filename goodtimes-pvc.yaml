@@ -2,7 +2,8 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: nginx-nfs-static-pvc
+  name: goodtimes-pvc
+  namespace: hammerspace
 spec:
   storageClassName: nfs-csi-gold
   accessModes:
