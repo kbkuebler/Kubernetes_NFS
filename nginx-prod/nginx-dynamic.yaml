@@ -5,6 +5,7 @@ metadata:
   name: nginx-data
   namespace: hammerspace
 spec:
+  objectives: kbk-test
   accessModes:
   - ReadWriteMany
   resources:
@@ -42,7 +43,7 @@ spec:
       weight: 1
   strategy:
     type: Recreate
-  replicas: 1 #Let's start with 1 pod
+  replicas: 2 #Let's start with 1 pod
   template:
     metadata:
       labels:
