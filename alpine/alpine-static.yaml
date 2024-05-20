@@ -3,6 +3,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: alpine-nfs
+  namespace: hammerspace
 spec:
   containers:
     - image: alpine:latest
