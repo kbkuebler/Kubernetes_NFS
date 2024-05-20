@@ -3,7 +3,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: nginx-data
-  namespace: default
+  namespace: hammerspace
 spec:
   accessModes:
   - ReadWriteMany
@@ -17,7 +17,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
-  namespace: default
+  namespace: hammerspace
 spec:
   selector:
     matchLabels:
