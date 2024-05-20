@@ -19,7 +19,7 @@ parameters:
   # Objectives to set on shares in addition to HS cluster defaults
   objectives: "keep-online"
   # ';' seperated list of <subnet>,access,rootSquash
-  exportOptions: "*,RW,false; 172.168.0.0/20,RO,true"
+  exportOptions: "*,RW,false; 10.42.0.0/20,RW,true"
   # One should be careful to set this if shares are used outside of the cluster. 
   # -1 means Hammerspace defalt which is to delete the share in 24 hours
   # 0 means now (5 minute delay)
