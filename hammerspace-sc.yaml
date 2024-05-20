@@ -17,7 +17,7 @@ parameters:
   # Optional, for use if we are supporting file-backed Mount volumes. Auto-created if it does not exist. Never deleted by the driver
   mountBackingShareName: k8s-file-storage
   # Objectives to set on shares in addition to HS cluster defaults
-  objectives: "keep-online"
+  objectives: "kbk-test"
   # ';' seperated list of <subnet>,access,rootSquash
   exportOptions: "*,RW,false; 10.42.0.0/20,RW,true"
   # One should be careful to set this if shares are used outside of the cluster. 
