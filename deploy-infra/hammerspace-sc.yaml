@@ -31,4 +31,6 @@ parameters:
   additionalMetadataTags: "storageClassName=hs-storage,fsType=nfs"
   # Ability to add a share description
   comment: "Created via CSI driver"
+  mountOptions:
+  - nfsvers=4.2
 allowVolumeExpansion: true
